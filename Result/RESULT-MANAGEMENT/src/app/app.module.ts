@@ -10,6 +10,7 @@ import { AddresultComponent } from './components/addresult/addresult.component';
 import { SerchresultComponent } from './components/serchresult/serchresult.component';
 import { ViewresultComponent } from './components/viewresult/viewresult.component';
 import { EditresultComponent } from './components/editresult/editresult.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,9 @@ import { EditresultComponent } from './components/editresult/editresult.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -102,14 +102,14 @@ a{
 <body>
 	<h2 style="text-align: center; color: white;">Add Result</h2>
 
-	<form action="" method="POST">
+	<form [formGroup]="creatResult" (ngSubmit)="onSubmit()">
 		<ul>
-            <li><label>Roll NO :</label> <input type='text' name='rollno' required="required"/></li>
-			<li><label>Name :</label> <input type='text' name='name' required="required"/></li>
-			<li><label>DOB :</label> <input type='date' name='date' required="required"/></li>
-            <li><label>Score :</label> <input type='number' name='score' required="required"/></li>
+            <li><label>Roll NO :</label> <input type='text' name='rollno' formControlName="rollno" required="required"/></li>
+			<li><label>Name :</label> <input type='text' name='name' formControlName="name" required="required"/></li>
+			<li><label>DOB :</label> <input type='date' name='date' formControlName="date" required="required"/></li>
+            <li><label>Score :</label> <input type='number' name='score' formControlName="score" required="required"/></li>
 	
-			<li><label>&nbsp;</label>  <input routerLink="/home" type="submit" value="SUBMIT"
+			<li><label>&nbsp;</label>  <input type="submit" value="SUBMIT"
 				class="btn"></li>
 		</ul>
 	</form>

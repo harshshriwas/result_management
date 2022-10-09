@@ -59,7 +59,7 @@ tr:hover {background-color: coral;}
           <td>{{u.rollno}}</td>
           <td>{{u.date}}</td>
           <td>{{u.score}}</td>
-          <td><a href="">Edit</a> | <a (click)="deleteResult(u.rollno)" >Delete</a></td>
+          <td><a [routerLink]="['/editresult/'+u.id]" >Edit</a> | <a (click)="deleteResult(u.rollno)" >Delete</a></td>
         </tr>
 
       </table>

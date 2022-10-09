@@ -1,1 +1,159 @@
-<p>serchresult works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        padding: 16px;
+        background-color: white;
+        width: 65%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        display: inline-block;
+        border: none;
+        border-radius: 23px;
+        background: #f1f1f1;
+    }
+
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .registerbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+        opacity: 1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+        color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+    }
+
+    form {
+        margin-left: 65px;
+        width: 500px;
+        background: #DE3163;
+        opacity: 0.9;
+        border: 4px solid #fff;
+        border-radius: 34px;
+        color: white;
+
+    }
+
+    form ul {
+        padding: 0px;
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+    a {
+        width: 30%;
+        margin: auto;
+        background: white;
+        border: 2px solid black;
+        border-radius: 20px;
+        text-decoration: none;
+        padding: 11px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        color: black;
+    }
+
+    .btn {
+        font-weight: bold;
+        font-size: medium;
+    }
+    #main{
+        display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    }
+    #secmain{
+        padding: 15px;
+    background: #c72c59;
+    margin: 25px 25px 25px 186px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 23px;
+    width: 400px;
+    text-align: center;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div style="display: inline;">
+            <h2 style="text-align: center; color: white;">Find Result</h2>
+
+            <form [formGroup]="searchResult" (ngSubmit)="getResultByRollno()">
+                <ul>
+
+                    <li><label>Roll NO :</label> <input type='text' formControlName="rollno" required="required" /></li>
+                    <li><label>Name :</label> <input type='text' formControlName="name" required="required" /></li>
+
+                    <li><label>&nbsp;</label> <input type="submit" value="Submit" class="btn"> <input type="reset"
+                            value="Clear" class="btn"></li>
+                </ul>
+            </form>
+        </div>
+
+
+        <div>
+
+            
+            <div *ngFor="let u of result" id="secmain">
+                <h2 style="color: #fff; text-align: center;">Result</h2>
+                <h3>Roll no : {{u.rollno}}</h3>
+                <h3>Name : {{u.name}}</h3>
+                <h3>Date OF Birth : {{u.date}}</h3>
+                <h3>Score : {{u.score}}</h3>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
