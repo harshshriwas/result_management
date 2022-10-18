@@ -34,8 +34,9 @@ li a:hover:not(.active) {
 
 <ul>
   <li><a class="active" routerLink="">Home</a></li>
-  <li><a routerLink="/login">Login</a></li>
-  <li><a routerLink="/register">SignUp</a></li>
+  <li><a routerLink="/login" *ngIf="!login.isLoggedIn()">Login</a></li>
+  <li><a (click)="logout()" *ngIf="login.isLoggedIn()">Logout</a></li>
+  <li><a routerLink="/register" *ngIf="!login.isLoggedIn()">SignUp</a></li>
 </ul>
 
 <router-outlet></router-outlet>
